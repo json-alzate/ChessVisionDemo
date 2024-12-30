@@ -1,0 +1,7 @@
+{
+  "name": "chessVisionDemo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
