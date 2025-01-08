@@ -1,12 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content force-overscroll="false">
 
-<ion-content [fullscreen]="true">
+
+
+  <div class="toolbar">
+    <div class="left-slot">
+      <img class="logo-home" src="src/assets/images/home_icon.png" alt="Logo" />
+    </div>
+  </div>
+
+
   @if(urlImg){
 
   <ion-card>
@@ -24,11 +26,38 @@
   </ion-card>
   }
 
+
+  <swiper-container #swiper [slidesPerView]="1.7" [spaceBetween]="0.1">
+
+    @for (piece of pieces; track $index) {
+
+
+    <swiper-slide [ngStyle]="{'margin-left': $index === 0 ? '16px' : '0px'}" [routerLink]="'category/' + piece.id">
+      <div class="slides-category" [ngStyle]="{'background-image':'url('+piece.image+')'} ">
+        <div class="mask"></div>
+        <span class="paragraph-h8">
+          {{ piece.name }}
+        </span>
+        <!-- <span class="paragraph-h11">
+            <span *ngIf="category.subcategories && category.subcategories > 0">{{category.subcategories}}
+              {{ 'CONTENT.subcategories' | translate }}</span>
+            <span *ngIf="category.posts && category.posts > 0">{{category.posts}} Artículos</span>
+            &nbsp;
+          </span> -->
+
+      </div>
+    </swiper-slide>
+    }
+
+  </swiper-container>
+
+
+  <!-- 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="takePicture()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
 
-  </ion-fab>
+  </ion-fab> -->
 
 </ion-content>

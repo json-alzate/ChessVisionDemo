@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon,
   IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent
@@ -8,16 +10,55 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 // @ts-ignore
 import * as ml5 from 'ml5';
 
+import { register } from 'swiper/element/bundle';
+register();
+
+
+import { Piece } from '../models/piece.model';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
 })
 export class HomePage {
 
-  loading = false;
+  pieces: Piece[] = [
+    {
+      id: 1,
+      name: 'Peon',
+      image: 'assets/images/pawn.jpg'
+    },
+    {
+      id: 2,
+      name: 'Alfil',
+      image: 'assets/images/bishop.jpg'
+    },
+    {
+      id: 3,
+      name: 'Caballo',
+      image: '/assets/images/knight.jpg'
+    },
+    {
+      id: 4,
+      name: 'Torre',
+      image: '/assets/images/rook.jpg'
+    },
+    {
+      id: 5,
+      name: 'Rey',
+      image: '/assets/images/king.jpg'
+    },
+    {
+      id: 6,
+      name: 'Dama',
+      image: '/assets/images/queen.jpg'
+    }
+  ];
 
+  loading = false;
   urlImg!: string | undefined;
   classifier!: ml5.ImageClassifier;
   predictionResult!: string;
@@ -28,7 +69,6 @@ export class HomePage {
     this.loading = true;
     const image = await Camera.getPhoto({
       quality: 90,
-      allowEditing: true,
       resultType: CameraResultType.Base64,
     });
 
