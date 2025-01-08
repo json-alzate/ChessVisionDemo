@@ -27,9 +27,19 @@ export class HomePage {
 
   pieces: Piece[] = [
     {
-      id: 1,
-      name: 'Peon',
-      image: 'assets/images/pawn.jpg'
+      id: 5,
+      name: 'Rey',
+      image: '/assets/images/king.jpg'
+    },
+    {
+      id: 6,
+      name: 'Dama',
+      image: '/assets/images/queen.jpg'
+    },
+    {
+      id: 4,
+      name: 'Torre',
+      image: '/assets/images/rook.jpg'
     },
     {
       id: 2,
@@ -42,19 +52,9 @@ export class HomePage {
       image: '/assets/images/knight.jpg'
     },
     {
-      id: 4,
-      name: 'Torre',
-      image: '/assets/images/rook.jpg'
-    },
-    {
-      id: 5,
-      name: 'Rey',
-      image: '/assets/images/king.jpg'
-    },
-    {
-      id: 6,
-      name: 'Dama',
-      image: '/assets/images/queen.jpg'
+      id: 1,
+      name: 'Peon',
+      image: 'assets/images/pawn.jpg'
     }
   ];
 

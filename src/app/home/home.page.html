@@ -4,8 +4,38 @@
 
   <div class="toolbar">
     <div class="left-slot">
-      <img class="logo-home" src="src/assets/images/home_icon.png" alt="Logo" />
+      <img class="logo-home" src="assets/images/chess-queen-solid.svg" alt="Logo" />
     </div>
+  </div>
+
+  <h2 class="ion-padding-horizontal">Reconocimiento inteligente de piezas de ajedrez</h2>
+
+  <div class="ion-padding ion-margin-vertical">
+
+    <ion-text color="primary">
+      <h5 class="ion-no-margin">
+        Identifica la imagen
+      </h5>
+    </ion-text>
+
+    <div class="wearable-widget">
+
+      <div class="labels">
+        <span class="paragraph-h7">Captura tu pieza</span>
+        <span class="paragraph-h11">
+          Toma una foto e identifica la pieza en ella
+        </span>
+
+      </div>
+      <ion-fab>
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+    </div>
+
+
   </div>
 
 
@@ -27,7 +57,7 @@
   }
 
 
-  <swiper-container #swiper [slidesPerView]="1.7" [spaceBetween]="0.1">
+  <swiper-container #swiper [slidesPerView]="1.7">
 
     @for (piece of pieces; track $index) {
 
