@@ -33,7 +33,11 @@ h2 {
   line-height: normal;
 }
 
-.wearable-widget {
+.scan-widget {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
   background: rgb(83, 47, 190);
   background: linear-gradient(260deg, rgba(83, 47, 190, 1) 42%, rgba(53, 22, 142, 1) 100%);
   border-radius: 11px;
@@ -41,15 +45,36 @@ h2 {
   height: 90px;
 
   .labels {
-    max-width: 60%;
+
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 80%;
 
     .paragraph-h11,
     .paragraph-h7 {
       color: var(--ion-color-white);
+      max-width: 80%;
+      font-style: normal;
+      line-height: normal;
     }
+
+    .paragraph-h7 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.42px;
+    }
+
+    .paragraph-h11 {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: -0.294px;
+    }
+  }
+
+  .scan-button {
+    display: flex;
+    justify-content: end;
   }
 
 }

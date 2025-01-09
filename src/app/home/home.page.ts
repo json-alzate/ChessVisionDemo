@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon,
-  IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent
+  IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonRippleEffect
 } from '@ionic/angular/standalone';
 
 import { Camera, CameraResultType } from '@capacitor/camera';
@@ -21,7 +21,8 @@ import { Piece } from '../models/piece.model';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
+  imports: [CommonModule,
+    IonRippleEffect, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
 })
 export class HomePage {
 
