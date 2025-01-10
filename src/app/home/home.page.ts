@@ -2,8 +2,8 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon,
-  IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonRippleEffect
+  IonContent, IonCard, IonProgressBar,
+  IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonRippleEffect, ModalController
 } from '@ionic/angular/standalone';
 
 import { Camera, CameraResultType } from '@capacitor/camera';
@@ -16,13 +16,15 @@ register();
 
 import { Piece } from '../models/piece.model';
 
+import { PiecePage } from '../piece/piece.page';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule,
-    IonRippleEffect, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonProgressBar, IonFab, IonFabButton, IonIcon, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
+    IonRippleEffect, IonContent, IonCard, IonProgressBar, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
 })
 export class HomePage {
 
@@ -64,7 +66,9 @@ export class HomePage {
   classifier!: ml5.ImageClassifier;
   predictionResult!: string;
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController
+  ) { }
 
   async takePicture() {
     this.loading = true;
@@ -84,6 +88,18 @@ export class HomePage {
     // Predict the label
     this.predictionResult = await this.predict(imageUrl);
     this.loading = false;
+  }
+
+
+  async openModal(piece: Piece) {
+    const modal = await this.modalCtrl.create({
+      component: PiecePage,
+      componentProps: { piece },
+      initialBreakpoint: 0.8,
+      breakpoints: [0, 0.5, 0.8, 1],
+    });
+    modal.present();
+
   }
 
   async loadModel() {

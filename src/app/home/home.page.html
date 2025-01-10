@@ -4,7 +4,7 @@
 
   <div class="toolbar">
     <div class="left-slot">
-      <img class="logo-home" src="assets/images/chess-queen-solid.svg" alt="Logo" />
+      <img class="logo-home" src="assets/images/chess-queen-solid.png" alt="Logo" />
     </div>
   </div>
 
@@ -31,9 +31,6 @@
       </div>
 
       <div class="scan-button">
-        <!-- <ion-fab-button (click)="takePicture()">
-            <ion-icon name="add"></ion-icon>
-          </ion-fab-button> -->
         <img src="assets/images/scan.png" alt="" srcset="">
       </div>
 
@@ -69,19 +66,12 @@
     @for (piece of pieces; track $index) {
 
 
-    <swiper-slide [ngStyle]="{'margin-left': $index === 0 ? '16px' : '0px'}" [routerLink]="'category/' + piece.id">
+    <swiper-slide [ngStyle]="{'margin-left': $index === 0 ? '16px' : '0px'}" (click)="openModal(piece)">
       <div class="slides-category" [ngStyle]="{'background-image':'url('+piece.image+')'} ">
         <div class="mask"></div>
         <span class="paragraph-h8">
           {{ piece.name }}
         </span>
-        <!-- <span class="paragraph-h11">
-            <span *ngIf="category.subcategories && category.subcategories > 0">{{category.subcategories}}
-              {{ 'CONTENT.subcategories' | translate }}</span>
-            <span *ngIf="category.posts && category.posts > 0">{{category.posts}} Artículos</span>
-            &nbsp;
-          </span> -->
-
       </div>
     </swiper-slide>
     }

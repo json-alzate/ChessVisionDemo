@@ -1,0 +1,163 @@
+ion-content {
+    .main-container {
+        min-height: 100%;
+        padding-bottom: 16px;
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            height: 276px;
+
+            .mask {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 276px;
+                background-image: url(/assets/images/post_mask2.png);
+                background-size: cover;
+                background-position: center;
+                opacity: 0.6;
+                z-index: 1;
+            }
+
+            .toolbar {
+                z-index: 3;
+                margin-top: var(--ion-safe-area-top);
+            }
+
+            .media-toolbar {
+                z-index: 0;
+            }
+
+            .title {
+                flex: 1;
+                align-items: end;
+                display: flex;
+                z-index: 3;
+            }
+
+            .duration-container {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                z-index: 3;
+            }
+
+            .media-title {
+                flex: none;
+                align-items: start;
+                z-index: 0;
+            }
+
+            .mask-bottom {
+                position: absolute;
+                // top: 0;
+                left: 0;
+                // height: 276px;
+                height: 34vh;
+                width: 100%;
+                background-image: url(/assets/images/post_mask1.png);
+                background-size: cover;
+                background-position: center;
+                z-index: 2;
+            }
+        }
+
+        .media-header {
+            height: auto;
+        }
+
+        h2 {
+            color: var(--ion-color-primary);
+        }
+    }
+
+    .media-main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .media-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+
+        img {
+            width: 82px;
+            align-self: center;
+        }
+    }
+
+
+    .next-post-container {
+        display: flex;
+        background: #FAF2FA;
+        border-radius: 11px;
+
+        .texts {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 70%;
+            padding: 16px;
+
+            .duration {
+                color: #ada1d0;
+            }
+
+        }
+
+        .image {
+            display: flex;
+
+            img {
+                border-radius: 0px 11px 11px 0px;
+            }
+        }
+    }
+
+
+
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+
+    .playBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+}
+
+.duration {
+    display: flex;
+    margin-top: 5px;
+    gap: 3px;
+    align-items: end;
+    color: var(--ion-color-primary);
+
+    span {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 13px;
+        margin-top: 2px;
+    }
+}
+
+
+@media only screen and (max-device-height: 667px) and (orientation: portrait) {
+    .main-container {
+        .header {
+            .mask-bottom {
+                height: 43vh !important;
+            }
+        }
+    }
+}

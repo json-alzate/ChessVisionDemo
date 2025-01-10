@@ -1,0 +1,62 @@
+<ion-content force-overscroll="false" class="content"
+  [style.--background]="'url( assets/images/main_background.png ) no-repeat center / 100%'">
+  <div class="main-container">
+
+    <div class="header media-header" [ngStyle]="piece?.image ? {'background-image': 'url(' + piece.image + ')'} : {}">
+
+      <!-- <div *ngIf="post?.type === 'text'" class="maskpurple"></div>
+      <div *ngIf="post?.type === 'text'" class="mask"></div> -->
+
+      <div class="toolbar ion-padding-horizontal">
+        <div class="left-slot">
+
+        </div>
+        <div class="center-slot"></div>
+        <div class="right-slot">
+
+
+
+          <!-- <ion-button fill="clear">
+            <ion-icon slot="icon-only" src="assets/images/icons/download.svg"></ion-icon>
+          </ion-button> -->
+        </div>
+      </div>
+
+
+
+
+      <div class="title ion-padding-horizontal media-title">
+        <ion-text color="primary">
+          <h2>{{piece?.name}}</h2>
+        </ion-text>
+      </div>
+
+      <div class="duration ion-padding-horizontal">
+
+      </div>
+
+      <!-- <div *ngIf="post?.type === 'text'" class="mask-bottom"></div> -->
+
+
+    </div>
+
+    <div class="content ion-padding-horizontal media-content">
+
+      <div class="ion-margin-vartical">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit autem minima doloribus eligendi perferendis
+        aliquam nulla iusto eveniet exercitationem tempore accusamus officia, soluta, quidem rem delectus veniam
+        excepturi sapiente tempora!
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer ion-padding-horizontal ion-padding-bottom">
+
+
+    </div>
+  </div>
+
+</ion-content>
