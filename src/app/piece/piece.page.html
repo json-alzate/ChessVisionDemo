@@ -2,10 +2,15 @@
   [style.--background]="'url( assets/images/main_background.png ) no-repeat center / 100%'">
   <div class="main-container">
 
-    <div class="header media-header" [ngStyle]="piece?.image ? {'background-image': 'url(' + piece.image + ')'} : {}">
+    <div class="header" [ngStyle]="piece?.image ? {
+      'background-image': 'url(' + piece.image + ')',
+      'background-repeat': 'no-repeat',
+      'background-position': 'center center',
+      'background-size': 'cover'
+    } : {}">
 
-      <!-- <div *ngIf="post?.type === 'text'" class="maskpurple"></div>
-      <div *ngIf="post?.type === 'text'" class="mask"></div> -->
+      <div class="maskpurple"></div>
+      <div class="mask"></div>
 
       <div class="toolbar ion-padding-horizontal">
         <div class="left-slot">
@@ -14,7 +19,9 @@
         <div class="center-slot"></div>
         <div class="right-slot">
 
-
+          <ion-button type="button" fill="clear" size="large" color="light" shape="round" (click)="close()">
+            <ion-icon slot="icon-only" src="assets/images/close_white.svg"></ion-icon>
+          </ion-button>
 
           <!-- <ion-button fill="clear">
             <ion-icon slot="icon-only" src="assets/images/icons/download.svg"></ion-icon>
@@ -22,32 +29,19 @@
         </div>
       </div>
 
-
-
-
-      <div class="title ion-padding-horizontal media-title">
-        <ion-text color="primary">
-          <h2>{{piece?.name}}</h2>
+      <div class="title ion-padding-horizontal">
+        <ion-text color="light">
+          <h1>{{piece?.name}}</h1>
         </ion-text>
       </div>
 
-      <div class="duration ion-padding-horizontal">
-
-      </div>
-
-      <!-- <div *ngIf="post?.type === 'text'" class="mask-bottom"></div> -->
-
-
     </div>
 
-    <div class="content ion-padding-horizontal media-content">
+    <div class="content ion-padding-horizontal">
 
-      <div class="ion-margin-vartical">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit autem minima doloribus eligendi perferendis
-        aliquam nulla iusto eveniet exercitationem tempore accusamus officia, soluta, quidem rem delectus veniam
-        excepturi sapiente tempora!
-      </div>
-
+      <p>
+        {{ piece?.description}}
+      </p>
 
     </div>
 

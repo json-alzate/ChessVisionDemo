@@ -32,32 +32,38 @@ export class HomePage {
     {
       id: 5,
       name: 'Rey',
-      image: '/assets/images/king.jpg'
+      image: '/assets/images/king.jpg',
+      description: 'Es la pieza principal del ajedrez. Se mueve una casilla en cualquier dirección (horizontal, vertical o diagonal). Aunque no tiene un valor numérico como otras piezas, perderlo significa el fin de la partida.'
     },
     {
       id: 6,
       name: 'Dama',
-      image: '/assets/images/queen.jpg'
+      image: '/assets/images/queen.jpg',
+      description: 'La pieza más poderosa del tablero. Puede moverse cualquier número de casillas en línea recta, ya sea horizontal, vertical o diagonal. Su combinación de movimientos la convierte en una herramienta clave para atacar y defender.'
     },
     {
       id: 4,
       name: 'Torre',
-      image: '/assets/images/rook.jpg'
+      image: '/assets/images/rook.jpg',
+      description: 'Se mueve en línea recta de forma ilimitada, pero solo en direcciones horizontales o verticales. Es muy útil para dominar filas y columnas abiertas en el tablero.'
     },
     {
       id: 2,
       name: 'Alfil',
-      image: 'assets/images/bishop.jpg'
+      image: 'assets/images/bishop.jpg',
+      description: 'Se mueve en diagonal tantas casillas como desee. Cada alfil está limitado a casillas de un solo color, por lo que se complementa con el otro alfil del equipo para cubrir el tablero.'
     },
     {
       id: 3,
       name: 'Caballo',
-      image: '/assets/images/knight.jpg'
+      image: '/assets/images/knight.jpg',
+      description: 'Se mueve en forma de "L" (dos casillas en una dirección y una en otra perpendicular). Es la única pieza que puede saltar sobre otras, lo que lo hace especialmente valioso en posiciones cerradas.'
     },
     {
       id: 1,
       name: 'Peon',
-      image: 'assets/images/pawn.jpg'
+      image: 'assets/images/pawn.jpg',
+      description: 'Es la pieza más numerosa y aparentemente más débil, pero tiene un rol estratégico crucial. Avanza una casilla (o dos en su primer movimiento) y captura en diagonal. Si llega al final del tablero, puede transformarse en cualquier pieza (excepto el rey), lo que le da un gran potencial.'
     }
   ];
 
