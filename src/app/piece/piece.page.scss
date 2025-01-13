@@ -1,7 +1,6 @@
 ion-content {
     .main-container {
-        min-height: 100%;
-        padding-bottom: 16px;
+
 
         .header {
             display: flex;
@@ -90,6 +89,24 @@ ion-content {
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: -0.378px;
+            }
+
+            .piece-color-choose-container {
+                display: flex;
+
+                ion-icon {
+                    font-size: 40px;
+                    margin-right: 8px;
+                }
+
+                .piece-initial-position {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    flex: 1;
+                }
+
             }
         }
 
