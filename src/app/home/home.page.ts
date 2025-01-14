@@ -104,7 +104,7 @@ export class HomePage {
   }
 
   evaluatePrediction(prediction: string) {
-    const piece = this.pieces.find(p => p.name === prediction);
+    const piece = this.pieces.find(p => (p.name === prediction || p.name + 'N' === prediction));
     if (piece) {
       this.openModal(piece);
     }
@@ -129,7 +129,7 @@ export class HomePage {
 
   async loadModel() {
     // Load a model using ml5
-    this.classifier = await ml5.imageClassifier();
+    this.classifier = await ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/YNeyYjSbR/model.json');
   }
 
   async predict(base64Image: string) {
