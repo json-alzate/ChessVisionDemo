@@ -1,6 +1,5 @@
 ion-content {
   --background: url(/assets/images/main_background.png) no-repeat center center / cover;
-
 }
 
 
@@ -77,6 +76,18 @@ h2 {
     justify-content: end;
   }
 
+}
+
+.card-image {
+  ion-card-header {
+    display: flex;
+    flex-direction: row;
+
+    ion-card-title {
+      display: flex;
+      flex: 1;
+    }
+  }
 }
 
 

@@ -1,4 +1,4 @@
-<ion-content force-overscroll="false">
+<ion-content force-overscroll="false" class="ion-padding-bottom">
 
 
 
@@ -9,7 +9,7 @@
   </div>
 
   <h2 class="ion-padding-horizontal">Reconocimiento inteligente de piezas de ajedrez</h2>
-
+  @if(!urlImg){
   <div class="ion-padding ion-margin-vertical">
 
     <ion-text color="primary">
@@ -18,10 +18,7 @@
       </h5>
     </ion-text>
 
-
-
-
-    <div class="scan-widget ion-activatable">
+    <div class="scan-widget ion-activatable" (click)="takePicture()">
       <ion-ripple-effect></ion-ripple-effect>
       <div class="labels">
         <span class="paragraph-h7">Captura tu pieza</span>
@@ -31,28 +28,25 @@
       </div>
 
       <div class="scan-button">
-        <img src="assets/images/scan.png" alt="" srcset="">
+        <img src="assets/images/scan.png" alt="scan">
       </div>
-
-
 
     </div>
   </div>
-
-
-
-
+  }
 
   @if(urlImg){
 
-  <ion-card>
+  <ion-card class="card-image">
     @if(loading){
     <ion-progress-bar type="indeterminate"></ion-progress-bar>
     }
 
     <ion-card-header>
-      <ion-card-subtitle>foto</ion-card-subtitle>
       <ion-card-title>{{ predictionResult }}</ion-card-title>
+      <ion-button type="button" fill="clear" size="small" color="light" shape="round" (click)="clear()">
+        <ion-icon slot="icon-only" src="assets/images/close.svg"></ion-icon>
+      </ion-button>
     </ion-card-header>
     <ion-card-content>
       <img [src]="'data:image/jpeg;base64,'+urlImg">

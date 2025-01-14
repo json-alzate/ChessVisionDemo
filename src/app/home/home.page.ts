@@ -100,6 +100,14 @@ export class HomePage {
     // Predict the label
     this.predictionResult = await this.predict(imageUrl);
     this.loading = false;
+    this.evaluatePrediction(this.predictionResult);
+  }
+
+  evaluatePrediction(prediction: string) {
+    const piece = this.pieces.find(p => p.name === prediction);
+    if (piece) {
+      this.openModal(piece);
+    }
   }
 
 
@@ -114,9 +122,14 @@ export class HomePage {
 
   }
 
+  clear() {
+    this.urlImg = undefined;
+    this.predictionResult = '';
+  }
+
   async loadModel() {
     // Load a model using ml5
-    this.classifier = await ml5.imageClassifier('/assets/tm-my-image-model/model.json');
+    this.classifier = await ml5.imageClassifier();
   }
 
   async predict(base64Image: string) {
