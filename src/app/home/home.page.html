@@ -1,6 +1,38 @@
 <ion-content force-overscroll="false" class="ion-padding-bottom">
 
 
+  <!-- Base   -->
+
+
+  <!-- <ion-button (click)="takePicture()" expand="block" shape="round">
+    Tomar foto
+  </ion-button>
+
+  @if(urlImg){
+
+  <ion-card class="card-image">
+    @if(loading){
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    }
+
+    <ion-card-header>
+      <ion-card-title>{{ predictionResult }}</ion-card-title>
+      <ion-button type="button" fill="clear" size="small" color="light" shape="round" (click)="clear()">
+        <ion-icon slot="icon-only" src="assets/images/close.svg"></ion-icon>
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="'data:image/jpeg;base64,'+urlImg">
+    </ion-card-content>
+  </ion-card>
+  } -->
+
+  <!-- Fin base -->
+
+
+
+
+
 
   <div class="toolbar">
     <div class="left-slot">
@@ -72,13 +104,5 @@
 
   </swiper-container>
 
-
-  <!-- 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="takePicture()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
-
-  </ion-fab> -->
 
 </ion-content>
