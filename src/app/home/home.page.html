@@ -1,10 +1,13 @@
 <ion-content force-overscroll="false" class="ion-padding-bottom">
 
+  <div class="main-container">
 
-  <!-- Base   -->
 
 
-  <!-- <ion-button (click)="takePicture()" expand="block" shape="round">
+    <!-- Base   -->
+
+
+    <!-- <ion-button (click)="takePicture()" expand="block" shape="round">
     Tomar foto
   </ion-button>
 
@@ -27,82 +30,82 @@
   </ion-card>
   } -->
 
-  <!-- Fin base -->
+    <!-- Fin base -->
 
 
 
 
 
 
-  <div class="toolbar">
-    <div class="left-slot">
-      <img class="logo-home" src="assets/images/chess-queen-solid.png" alt="Logo" />
-    </div>
-  </div>
-
-  <h2 class="ion-padding-horizontal">Reconocimiento inteligente de piezas de ajedrez</h2>
-  @if(!urlImg){
-  <div class="ion-padding ion-margin-vertical">
-
-    <ion-text color="primary">
-      <h5 class="ion-no-margin">
-        Identifica la imagen
-      </h5>
-    </ion-text>
-
-    <div class="scan-widget ion-activatable" (click)="takePicture()">
-      <ion-ripple-effect></ion-ripple-effect>
-      <div class="labels">
-        <span class="paragraph-h7">Captura tu pieza</span>
-        <span class="paragraph-h11">
-          Toma una foto e identifica la pieza en ella
-        </span>
+    <div class="toolbar">
+      <div class="left-slot">
+        <img class="logo-home" src="assets/images/chess-queen-solid.png" alt="Logo" />
       </div>
-
-      <div class="scan-button">
-        <img src="assets/images/scan.png" alt="scan">
-      </div>
-
     </div>
-  </div>
-  }
 
-  @if(urlImg){
+    <h2 class="ion-padding-horizontal">Reconocimiento inteligente de piezas de ajedrez</h2>
+    @if(!urlImg){
+    <div class="ion-padding ion-margin-vertical">
 
-  <ion-card class="card-image">
-    @if(loading){
-    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      <ion-text color="primary">
+        <h5 class="ion-no-margin">
+          Identifica la imagen
+        </h5>
+      </ion-text>
+
+      <div class="scan-widget ion-activatable" (click)="takePicture()">
+        <ion-ripple-effect></ion-ripple-effect>
+        <div class="labels">
+          <span class="paragraph-h7">Captura tu pieza</span>
+          <span class="paragraph-h11">
+            Toma una foto e identifica la pieza en ella
+          </span>
+        </div>
+
+        <div class="scan-button">
+          <img src="assets/images/scan.png" alt="scan">
+        </div>
+
+      </div>
+    </div>
     }
 
-    <ion-card-header>
-      <ion-card-title>{{ predictionResult }}</ion-card-title>
-      <ion-button type="button" fill="clear" size="small" color="light" shape="round" (click)="clear()">
-        <ion-icon slot="icon-only" src="assets/images/close.svg"></ion-icon>
-      </ion-button>
-    </ion-card-header>
-    <ion-card-content>
-      <img [src]="'data:image/jpeg;base64,'+urlImg">
-    </ion-card-content>
-  </ion-card>
-  }
+    @if(urlImg){
 
+    <ion-card class="card-image">
+      @if(loading){
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      }
 
-  <swiper-container #swiper [slidesPerView]="1.7">
-
-    @for (piece of pieces; track $index) {
-
-
-    <swiper-slide [ngStyle]="{'margin-left': $index === 0 ? '16px' : '0px'}" (click)="openModal(piece)">
-      <div class="slides-category" [ngStyle]="{'background-image':'url('+piece.image+')'} ">
-        <div class="mask"></div>
-        <span class="paragraph-h8">
-          {{ piece.name }}
-        </span>
-      </div>
-    </swiper-slide>
+      <ion-card-header>
+        <ion-card-title>{{ predictionResult }}</ion-card-title>
+        <ion-button type="button" fill="clear" size="small" color="light" shape="round" (click)="clear()">
+          <ion-icon slot="icon-only" src="assets/images/close.svg"></ion-icon>
+        </ion-button>
+      </ion-card-header>
+      <ion-card-content>
+        <img [src]="'data:image/jpeg;base64,'+urlImg">
+      </ion-card-content>
+    </ion-card>
     }
 
-  </swiper-container>
+
+    <swiper-container #swiper [slidesPerView]="1.7">
+
+      @for (piece of pieces; track $index) {
 
 
+      <swiper-slide [ngStyle]="{'margin-left': $index === 0 ? '16px' : '0px'}" (click)="openModal(piece)">
+        <div class="slides-category" [ngStyle]="{'background-image':'url('+piece.image+')'} ">
+          <div class="mask"></div>
+          <span class="paragraph-h8">
+            {{ piece.name }}
+          </span>
+        </div>
+      </swiper-slide>
+      }
+
+    </swiper-container>
+
+  </div>
 </ion-content>

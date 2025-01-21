@@ -1,5 +1,9 @@
 ion-content {
   --background: url(/assets/images/main_background.png) no-repeat center center / cover;
+
+  .main-container {
+    padding-top: var(--ion-safe-area-top);
+  }
 }
 
 
@@ -74,6 +78,7 @@ h2 {
   .scan-button {
     display: flex;
     justify-content: end;
+    max-width: 15%;
   }
 
 }
@@ -100,7 +105,7 @@ h2 {
 .slides-category {
   background-size: cover;
   background-position: center;
-  width: 225px;
+  width: 58vw;
   height: 500px;
   border-radius: 11px;
   color: var(--ion-color-white);
